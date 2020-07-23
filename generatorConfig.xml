@@ -12,8 +12,8 @@
 		</commentGenerator>
 		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://192.168.102.53:3306/ito" userId="wing"
-			password="root">
+			connectionURL="jdbc:mysql://127.0.0.1:3306/oa_db" userId="yirong"
+			password="123456">
 		</jdbcConnection>
 		<!-- <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
 			connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:yycg" 
@@ -28,7 +28,7 @@
 		</javaTypeResolver>
 
 		<!-- targetProject:生成PO类的位置 -->
-		<javaModelGenerator targetPackage="com.ito.domain"
+		<javaModelGenerator targetPackage="com.dkm.orproject.dkmoa.domain"
 			targetProject=".\src">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
@@ -43,14 +43,14 @@
 		</sqlMapGenerator>
 		<!-- targetPackage：mapper接口生成的位置 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.ito.dao"
+			targetPackage="com.dkm.orproject.dkmoa.dao"
 			targetProject=".\src">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 		<!-- 指定数据库表 -->
-		<table schema="" tableName="applicant" domainObjectName="Applicant"></table>
-		<table schema="" tableName="applicant_flow_info" domainObjectName="Applicant_flow_info"></table>
+		<!--<table schema="" tableName="applicant" domainObjectName="Applicant"></table>-->
+		<table tableName="%" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
 
 		<!--去掉Mybatis Generator生成的一堆 example
 		<table schema="general" tableName="tb_table_name" domainObjectName="EntityName"
